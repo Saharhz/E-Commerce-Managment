@@ -1,18 +1,37 @@
 import Product from "../../models/Product.js";
 import Order from "../../models/Order.js";
 
-export const createOrder = async (orderData) => {
+// export const createOrder = async (orderData, userId) => {
+//   let totalPrice = 0;
+//   for (const item of orderData.products) {
+//     const product = await Product.findById(item.product);
+//     if (!product) {
+//       throw new Error(`Product with ID ${item.product} not found`);
+//     }
+//     totalPrice += product.price * item.quantity;
+//   }
+
+export const createOrder = async (orderData, userId) => {
   let totalPrice = 0;
+  const validatedProducts = [];
+
   for (const item of orderData.products) {
-    const product = await Product.findById(item.product);
-    if (!product) {
+    const foundProduct = await Product.findById(item.product);
+    if (!foundProduct) {
       throw new Error(`Product with ID ${item.product} not found`);
     }
-    totalPrice += product.price * item.quantity;
+
+    totalPrice += foundProduct.price * item.quantity;
+    validatedProducts.push({
+      user: userId,
+      product: foundProduct._id,
+      quantity: item.quantity,
+    });
   }
 
   const order = new Order({
-    products: orderData.products,
+    user: userId,
+    products: validatedProducts,
     totalPrice,
     status: orderData.status || "pending",
   });
@@ -33,4 +52,8 @@ export const updateOrder = async (id, data) => {
 
 export const deleteOrder = async (id) => {
   return await Order.findByIdAndDelete(id);
+};
+
+export const getOrdersByUser = async (userId) => {
+  return await Order.find({ user: userId }).populate("products.product");
 };
