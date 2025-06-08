@@ -1,0 +1,483 @@
+{
+	"info": {
+		"_postman_id": "031796c1-ecf3-4cf4-9db6-311a1314ed13",
+		"name": "E-commerce API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45269391",
+		"_collection_link": "https://saharhosseinzadeh.postman.co/workspace/Sahar-Hosseinzadeh's-Workspace~03a781c0-f304-4949-893f-99528fca8712/collection/45269391-031796c1-ecf3-4cf4-9db6-311a1314ed13?action=share&source=collection_link&creator=45269391"
+	},
+	"item": [
+		{
+			"name": "auth/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"saharhz@example.com\",\n  \"password\": \"admin123h\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/auth/register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Sahar Admin\",\n  \"email\": \"saharadmin@example.com\",\n  \"password\": \"admin123\",\n  \"role\": \"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/products",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Bluetooth Speaker\",\n  \"description\": \"Portable speaker with rich bass and waterproof design.\",\n  \"price\": 45.99,\n  \"stock\": 20,\n  \"slug\": \"bluetooth-speaker\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/products",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/products/683f554e755b456418f25976",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/products/683f554e755b456418f25976",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"products",
+						"683f554e755b456418f25976"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/products/683f554e755b456418f25976",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"price\": 112.99,\n  \"stock\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/products/683f554e755b456418f25976",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"products",
+						"683f554e755b456418f25976"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/products/683f54ee755b456418f25974",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5001/products/683f54ee755b456418f25974",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"products",
+						"683f54ee755b456418f25974"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/orders",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NDQwZjU5YjRiODM3YzQ2YTRkMTYyYiIsInJvbGUiOiJ1c2VyIiwiZW1haWwiOiJzYWhhckBleGFtcGxlLmNvbSIsImlhdCI6MTc0OTI5ODUyOSwiZXhwIjoxNzQ5Mzg0OTI5fQ.RxU-NA5yoADMud6XcguteqWI_E357xEp4_zXqVXiRK8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"products\": [\n    {\n      \"product\": \"683f554e755b456418f25976\",\n      \"quantity\": 2\n    },\n    {\n      \"product\": \"68455ffb091555e45f7dedc2\",\n      \"quantity\": 1\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/orders",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/orders/6845861bb6ef3b6f0da150fd",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NDU1ZDIxMDkxNTU1ZTQ1ZjdkZWRiYiIsInJvbGUiOiJhZG1pbiIsImVtYWlsIjoic2FoYXJoekBleGFtcGxlLmNvbSIsImlhdCI6MTc0OTM4NjczOCwiZXhwIjoxNzQ5NDczMTM4fQ.xcfNEr3Dtlf_mBN-MY5Dpc4aaBOzHaNuPh1pvpUqz2I",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5001/orders/6845861bb6ef3b6f0da150fd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"orders",
+						"6845861bb6ef3b6f0da150fd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/orders/6845861bb6ef3b6f0da150fd",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"status\": \"shipped\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/orders/6845861bb6ef3b6f0da150fd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"orders",
+						"6845861bb6ef3b6f0da150fd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/orders/6845861bb6ef3b6f0da150fd",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/orders/6845861bb6ef3b6f0da150fd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"orders",
+						"6845861bb6ef3b6f0da150fd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/users",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NDU1ZDIxMDkxNTU1ZTQ1ZjdkZWRiYiIsInJvbGUiOiJhZG1pbiIsImVtYWlsIjoic2FoYXJoekBleGFtcGxlLmNvbSIsImlhdCI6MTc0OTM5Nzg3MiwiZXhwIjoxNzQ5NDg0MjcyfQ.2qsUYasS-GjDckbi0KZMnzHgExuGY2htSXK3DHAZ4Oo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5001/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/users/68455eb4091555e45f7dedc0",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NDU1ZDIxMDkxNTU1ZTQ1ZjdkZWRiYiIsInJvbGUiOiJhZG1pbiIsImVtYWlsIjoic2FoYXJoekBleGFtcGxlLmNvbSIsImlhdCI6MTc0OTM5Nzg3MiwiZXhwIjoxNzQ5NDg0MjcyfQ.2qsUYasS-GjDckbi0KZMnzHgExuGY2htSXK3DHAZ4Oo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5001/users/68455eb4091555e45f7dedc0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"users",
+						"68455eb4091555e45f7dedc0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/users/68455eb4091555e45f7dedc0",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NDU1ZDIxMDkxNTU1ZTQ1ZjdkZWRiYiIsInJvbGUiOiJhZG1pbiIsImVtYWlsIjoic2FoYXJoekBleGFtcGxlLmNvbSIsImlhdCI6MTc0OTM5Nzg3MiwiZXhwIjoxNzQ5NDg0MjcyfQ.2qsUYasS-GjDckbi0KZMnzHgExuGY2htSXK3DHAZ4Oo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"New Name\",\n  \"role\": \"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/users/68455eb4091555e45f7dedc0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"users",
+						"68455eb4091555e45f7dedc0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/users/684411f9b4b837c46a4d162e",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NDU1ZDIxMDkxNTU1ZTQ1ZjdkZWRiYiIsInJvbGUiOiJhZG1pbiIsImVtYWlsIjoic2FoYXJoekBleGFtcGxlLmNvbSIsImlhdCI6MTc0OTM5Nzg3MiwiZXhwIjoxNzQ5NDg0MjcyfQ.2qsUYasS-GjDckbi0KZMnzHgExuGY2htSXK3DHAZ4Oo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"New Name\",\n  \"role\": \"admin\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5001/users/684411f9b4b837c46a4d162e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"users",
+						"684411f9b4b837c46a4d162e"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
